@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeShelf — Leituras que moldaram minha mente</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<div id="cursor">
+  <div class="cursor-bracket">
+    <span class="o">[</span>
+    <span class="cursor-inner"></span>
+    <span class="c">]</span>
+  </div>
+</div>
+<div id="cursor-ring"></div>
+
+<div id="loader">
+  <div class="loader-logo"><span>Estante</span> de João Gallego</div>
+  <div class="loader-code">
+    <div class="loader-line"><span class="kw">import</span> books <span class="kw">from</span> <span class="str">'./estante'</span></div>
+    <div class="loader-line"><span class="cm">// carregando sua estante...</span></div>
+    <div class="loader-line"><span class="kw">const</span> shelf = <span class="fn">createEstante</span>({</div>
+    <div class="loader-line">&nbsp;&nbsp;reader: <span class="str">'você'</span>,</div>
+    <div class="loader-line">&nbsp;&nbsp;books: [<span class="str">'Entendendo algoritmos'</span>],</div>
+    <div class="loader-line">})</div>
+    <div class="loader-line"><span class="fn">estante</span>.<span class="fn">render</span>() <span class="cm">// ✓ pronto</span></div>
+  </div>
+  <div class="loader-bar-wrap">
+    <div class="loader-bar"></div>
+  </div>
+</div>
+
+<div id="progress-bar"></div>
+
+<nav>
+  <a href="#" class="nav-logo"><span>Estante</span> de João Gallego</a>
+  <ul class="nav-links">
+    <li><a href="#books">Livros</a></li>
+    <li><a href="#queue">Na Fila</a></li>
+    <li><a href="#recommend">Recomendar</a></li>
+    <li><a href="#footer">Sobre</a></li>
+  </ul>
+</nav>
+
+<section id="hero" class="section">
+  <div class="grid-bg"></div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-label">// leituras</div>
+      <h1>Livros que<br><span>reescrevem</span>seu código.</h1>
+      <p class="hero-sub">
+        Uma seleção dos livros que li, o que aprendi com cada um, e onde você pode encontrá-los.
+      </p>
+      <a href="#books" class="hero-cta">
+        ver minha estante
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="hero-visual">
+      <div class="terminal-card">
+        <div class="terminal-header">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+          <span class="terminal-title">bookshelf.py</span>
+        </div>
+        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">python bookshelf.py --list</span></div>
+        <div class="terminal-line"><span class="out">Carregando estante...</span></div>
+        <div class="terminal-line">&nbsp;</div>
+        <div class="terminal-line"><span class="out">📚 Livros lidos: <span class="num">1</span></span></div>
+        <div class="terminal-line"><span class="out">⭐ Avaliação média: <span class="num">5 / 5</span></span></div>
+        <div class="terminal-line">&nbsp;</div>
+        <div class="terminal-line"><span class="out">[1] Entendendo Algoritmos</span></div>
+        <div class="terminal-line">&nbsp;</div>
+        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">python bookshelf.py --read<span class="cursor"></span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>scroll</span>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+</section>
+
+<section id="books" class="book-section odd">
+  <div class="book-inner">
+
+    <div class="book-cover-wrap reveal">
+      <div class="book-cover book-algo">
+        <img
+          src="entendendo_algoritmos.jpg"
+          alt="Capa do livro Entendendo Algoritmos — Aditya Y. Bhargava"
+        />
+      </div>
+    </div>
+
+    <div class="book-info">
+      <div class="book-badge badge-algo reveal">
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+        Leitura #01
+      </div>
+
+      <h2 class="book-title reveal reveal-delay-1">Entendendo<br>Algoritmos</h2>
+      <div class="book-author reveal reveal-delay-1">Aditya Y. Bhargava</div>
+
+      <div class="rating-wrap reveal reveal-delay-2">
+        <span class="rating-label">⭐ ⭐ ⭐ ⭐ ⭐ — Excelente</span>
+      </div>
+
+      <div class="book-desc reveal reveal-delay-2">
+        <p>
+          "Entendendo Algoritmos", do Aditya Y. Bhargava, chegou até mim por indicação do meu quase familiar Augusto Galego, e já de cara deu para ver que não era um livro técnico comum. Foi uma ótima indicação.
+        </p>
+        <p>
+          O que mais gosto nele é como tudo é fácil de entender. O autor usa uma linguagem simples, cheio de desenhos que tornam as coisas muito mais claras, e ainda usa Python, que já é uma linguagem bem tranquila de ler. Dá para passar pelas páginas sem travar, sem aquela sensação de estar perdido.
+        </p>
+        <p>
+          Mas é bom ser sincero: esse livro é ótimo para ganhar conhecimento de mundo, praticar lógica e se preparar para desafios como o LeetCode. Porém, se você é iniciante e quer aprender programação do zero para sair construindo coisas, talvez ele não seja o melhor ponto de partida. Ele te ensina a pensar, não necessariamente a programar, e saber isso faz toda a diferença na hora de escolher lê-lo.
+        </p>
+      </div>
+
+      <div class="book-tags reveal reveal-delay-3">
+        <span class="tag">Algoritmos</span>
+        <span class="tag">Big O</span>
+        <span class="tag">Estruturas de Dados</span>
+        <span class="tag">Grafos</span>
+        <span class="tag">Iniciante → Intermediário</span>
+      </div>
+
+      <a href="https://amzn.to/SEU-LINK-AQUI" target="_blank" rel="noopener" class="book-btn btn-algo reveal reveal-delay-4">
+        Ver na Amazon
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="queue">
+  <div class="grid-bg"></div>
+  <div class="queue-inner">
+
+    <div class="queue-header reveal">
+      <div>
+        <div class="queue-label">// reading_queue.json</div>
+        <h2 class="queue-title">Próximo<br>na Fila</h2>
+      </div>
+      <div class="queue-count"><span>1</span> livro esperando</div>
+    </div>
+
+    <div class="queue-grid">
+
+      <div class="queue-card reveal reveal-delay-2">
+        <div class="queue-card-num">01</div>
+        <div class="queue-status">
+          <span class="queue-status-dot"></span>
+          Na fila
+        </div>
+        <div class="queue-card-title">Clean Code</div>
+        <div class="queue-card-author">Robert C. Martin</div>
+        <div class="queue-card-tags">
+          <span class="queue-tag">Boas Práticas</span>
+          <span class="queue-tag">Legibilidade</span>
+          <span class="queue-tag">Refatoração</span>
+        </div>
+        <div class="queue-card-reason">
+          Todo mundo fala que código bom é código que qualquer um consegue ler. Quero entender de verdade o que separa um código limpo de uma bagunça bem-intencionada.
+        </div>
+      </div>
+    </div>
+
+    <div class="queue-bottom-line reveal">atualizado conforme leio</div>
+
+  </div>
+</section>
+
+<section id="recommend">
+  <div class="grid-bg"></div>
+  <div class="recommend-inner">
+
+    <div class="recommend-left reveal">
+      <div class="recommend-label">// submit_book.js</div>
+      <h2 class="recommend-title">Me recomende<br>um livro</h2>
+      <p class="recommend-desc">
+        Se você tem um livro de programação que te marcou, me conte! Pode ser o próximo que eu adiciono na estante.
+      </p>
+      <div class="recommend-perks">
+        <div class="perk">
+          <span class="perk-icon">→</span>
+          <span>Leio todas as recomendações que chegam</span>
+        </div>
+        <div class="perk">
+          <span class="perk-icon">→</span>
+          <span>Se eu ler o livro, adiciono sua recomendação nos créditos da review</span>
+        </div>
+        <div class="perk">
+          <span class="perk-icon">→</span>
+          <span>Pode mandar livro de qualquer tema dentro de tech</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="recommend-form-wrap reveal reveal-delay-2">
+
+      <div id="rec-form-body">
+        <form
+          action="https://formsubmit.co/f070bc0187f540333a68c6a376d3e207"
+          method="POST"
+          id="rec-form"
+          onsubmit="handleSubmit(event)"
+        >
+          <input type="hidden" name="_subject" value="📚 Nova recomendação de livro — CodeShelf">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Seu nome</label>
+              <input type="text" name="nome" class="form-input" id="rec-name" placeholder="João Silva" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Seu e-mail (opcional)</label>
+              <input type="email" name="email" class="form-input" id="rec-email" placeholder="voce@email.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Título do livro</label>
+            <input type="text" name="livro" class="form-input" id="rec-book" placeholder="Ex: The Pragmatic Programmer" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Autor</label>
+            <input type="text" name="autor" class="form-input" id="rec-author" placeholder="Ex: Andrew Hunt" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Nível</label>
+            <select name="nivel" class="form-select form-input" id="rec-level">
+              <option value="" disabled selected>Selecione o nível</option>
+              <option value="Iniciante">Iniciante</option>
+              <option value="Intermediário">Intermediário</option>
+              <option value="Avançado">Avançado</option>
+              <option value="Qualquer nível">Qualquer nível</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Por que você recomenda?</label>
+            <textarea name="motivo" class="form-textarea" id="rec-reason" placeholder="O que esse livro tem de especial? O que te marcou nele?"></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" id="rec-submit">
+            Enviar recomendação
+            <span>→</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="form-success" id="rec-success">
+        <div class="form-success-icon">📬</div>
+        <div class="form-success-title">Recomendação enviada!</div>
+        <div class="form-success-sub">
+          Recebi sua sugestão e vou dar uma olhada.<br>
+          Se gostar, ele entra na fila em breve.
+        </div>
+        <span class="form-tag">obrigado pela indicação</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="grid-bg"></div>
+  <div class="footer-inner reveal">
+    <div class="footer-logo"><span>Estante</span> de João Gallego</div>
+    <p class="footer-disclaimer">
+      Os links para compra são links de afiliado, se você comprar pelo link, recebo uma pequena comissão sem custo adicional pra você. Isso me ajuda a continuar lendo e recomendando livros de qualidade. 🙏
+    </p>
+  </div>
+</footer>
+</body>
+</html>
